@@ -4,16 +4,19 @@ pipeline {
         stage("build"){
             steps{
                 echo "This is building stage"
+                sh "mvn compile"
             }
         }
         stage("test"){
             steps{
                 echo "this is testing stage"
+                sh "mvn clean package"
             }
         }
         stage("deoploy"){
             steps{
             echo "this is deploying stage"
+            sh "test"
         }
         }
     }
