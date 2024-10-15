@@ -1,22 +1,24 @@
 pipeline {
-    agent any 
+    agent {
+     label 'akshay'
+  }
     stages{
         stage("build"){
             steps{
                 echo "This is building stage"
-                sh "mvn compile"
+                // sh "mvn compile"
             }
         }
         stage("test"){
             steps{
                 echo "this is testing stage"
-                sh "mvn clean package"
+                // sh "mvn clean package"
             }
         }
         stage("deoploy"){
             steps{
             echo "this is deploying stage"
-            sh "test"
+            // sh "test"
         }
         }
     }
