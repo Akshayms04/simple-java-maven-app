@@ -2,24 +2,22 @@ pipeline {
     agent {
      label 'akshay'
   }
-    stages{
-        stage("build"){
-            steps{
-                echo "This is building stage"
-                // sh "mvn compile"
-            }
-        }
+    stage('build') {
+      steps {
+    // One or more steps need to be included within the steps block.
+  }
+
+    post {
+     success {
+      // One or more steps need to be included within each condition's block.
+    }
+  }
+}
         stage("test"){
             steps{
                 echo "this is testing stage"
                 // sh "mvn clean package"
             }
-        }
-        stage("deoploy"){
-            steps{
-            echo "this is deploying stage"
-            // sh "test"
-        }
         }
     }
 }
